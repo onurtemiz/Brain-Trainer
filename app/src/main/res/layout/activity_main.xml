@@ -11,21 +11,23 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="#42E625"
+        android:onClick="start"
         android:text="GO!"
         android:textColor="@android:color/white"
         android:textSize="70sp"
         android:textStyle="bold"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/scoreLayout"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -69,12 +71,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
+        android:id="@+id/buttonLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/scoreLayout">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -88,6 +92,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="#009688"
+                android:onClick="userClicked"
                 android:tag="0"
                 android:text="32"
                 android:textColor="@android:color/white"
@@ -101,6 +106,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="#F44336"
+                android:onClick="userClicked"
                 android:tag="1"
                 android:text="53"
                 android:textColor="@android:color/white"
@@ -120,6 +126,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="#2196F3"
+                android:onClick="userClicked"
                 android:tag="2"
                 android:text="99"
                 android:textColor="@android:color/white"
@@ -133,6 +140,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="#FF9800"
+                android:onClick="userClicked"
                 android:tag="3"
                 android:text="87"
                 android:textColor="@android:color/white"
@@ -140,5 +148,20 @@
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:paddingTop="0dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
