@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="#42E625"
+        android:text="GO!"
+        android:textColor="@android:color/white"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/scoreView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:text="0/0"
+            android:textColor="#303F9F"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timerView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:text="28s"
+            android:textColor="#D32F2F"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/questionView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 + 25"
+            android:textColor="#689F38"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/scoreView"
+            app:layout_constraintStart_toEndOf="@+id/timerView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/firstButton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#009688"
+                android:text="32"
+                android:textColor="@android:color/white"
+                android:textSize="56sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/secondButton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#F44336"
+                android:text="53"
+                android:textColor="@android:color/white"
+                android:textSize="56sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/thirdButton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#2196F3"
+                android:text="99"
+                android:textColor="@android:color/white"
+                android:textSize="56sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/ForthButton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="#FF9800"
+                android:text="87"
+                android:textColor="@android:color/white"
+                android:textSize="56sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
