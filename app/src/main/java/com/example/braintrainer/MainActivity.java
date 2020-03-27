@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private CountDownTimer countDownTimer = null;
     private ConstraintLayout scoreLayout;
     private LinearLayout buttonLayout;
+    private Button tryAgain;
+    private Button goButton;
     private ArrayList<Button> buttons = new ArrayList<Button>();
     private boolean gameOver = false;
     private int answer;
@@ -44,13 +46,30 @@ public class MainActivity extends AppCompatActivity {
         this.buttons.add((Button) findViewById(R.id.secondButton));
         this.buttons.add((Button) findViewById(R.id.thirdButton));
         this.buttons.add((Button) findViewById(R.id.forthButton));
+        this.tryAgain = (Button) findViewById(R.id.tryAgain);
+        this.goButton = (Button) findViewById(R.id.goButton);
         this.scoreLayout = (ConstraintLayout) findViewById(R.id.scoreLayout);
         this.buttonLayout = (LinearLayout) findViewById(R.id.buttonLayout);
         this.scoreLayout.setVisibility(View.INVISIBLE);
         this.buttonLayout.setVisibility(View.INVISIBLE);
+        this.tryAgain.setVisibility(View.INVISIBLE);
+        this.result.setVisibility(View.INVISIBLE);
+        this.goButton.setVisibility(View.VISIBLE);
 
 
 
+    }
+
+    public void tryAgain(View view){
+        this.tryAgain.setVisibility(View.INVISIBLE);
+        this.result.setVisibility(View.INVISIBLE);
+        this.gameOver = false;
+        startClock();
+        createNewQuestion();
+        createButtons();
+        this.rights = 0;
+        this.total = 0;
+        updateScore();
     }
 
     public void start(View view){
@@ -89,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         this.gameOver = true;
         this.result.setText("TIME IS UP!");
         this.result.setTextColor(Color.parseColor("#E64A19"));
+        this.tryAgain.setVisibility(View.VISIBLE);
     }
 
     public void userClicked(View view) {
